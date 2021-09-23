@@ -28,7 +28,7 @@ class TestTextDataReader:
                           tmpdir) -> Tuple[str,
                                            DataType]:
         p = tmpdir.mkdir("datadir").join("my_data.txt")
-        p.write(file_and_data_content[0])
+        p.write_text(file_and_data_content[0], "utf-8", True)
         return str(p), file_and_data_content[1]
 
     def test_read(self, filepath_and_data:
