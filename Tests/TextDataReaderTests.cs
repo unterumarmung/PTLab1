@@ -12,7 +12,7 @@ namespace Tests
         [Test]
         public void ReadFromText()
         {
-            // Arrage
+            // Arrange
             using var file = new TempFile();
 
             var fileLines = @"
