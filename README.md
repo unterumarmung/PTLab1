@@ -1,5 +1,17 @@
-[![Build Status](https://app.travis-ci.com/unterumarmung/PTLab1.svg?branch=main)](https://app.travis-ci.com/unterumarmung/PTLab1)
-
 # Лабораторная 1 по дисциплине "Технологии программирования"
 
-### Тема: Знакомство с системой контроля версий Git и инструментом CI/CD Travis CI
+## Тема: Знакомство с системой контроля версий Git и инструментом CI/CD Travis CI
+
+### Используемые средства:
+
+Язык: C# 9
+
+Рантайм: .NET 5
+
+Библиотеки для консольного приложения
+* CommandLineParser - парсер аргументов командной строки
+* Spectre.Console - pretty-printing в консоль
+
+Библиотеки для тестирования:
+* NUnit - базовая библиотека юнит-тестов
+* FluentAssertions - библиотека для "красивых" ассертов
