@@ -15,6 +15,6 @@ namespace Common
 
     public static class RatingExtensions
     {
-        public static Rating ToRating(this Dictionary<Student, decimal> rating) => new Rating(rating);
+        public static Rating ToRating(this Dictionary<Student, decimal> rating) => new (rating);
     }
 }
