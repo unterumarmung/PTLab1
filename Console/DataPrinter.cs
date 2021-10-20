@@ -19,6 +19,24 @@ namespace Console
             AnsiConsole.Render(Dump(rating));
         }
 
+        public static void PrintUnderachieving(IEnumerable<Student> students)
+        {
+            var table = new Table().Border(TableBorder.Rounded);
+            table.AddColumn("Неуспевающие студенты");
+
+            foreach (var student in students)
+            {
+                table.AddRow(student.ToString());
+            }
+
+            if (table.Rows.Count == 0)
+            {
+                table.AddRow("<пусто>");
+            }
+            
+            AnsiConsole.Render(table);
+        } 
+        
         private static Table Dump(Grades grades)
         {
             var table = new Table().Border(TableBorder.Rounded);
@@ -44,13 +62,14 @@ namespace Console
         private static BarChart Dump(Rating rating)
         {
             var barChart = new BarChart().Label("[blue bold]Рейтинг[/]").Width(60).CenterLabel().AddItems(rating,
-                (element) => new BarChartItem(element.Key.ToString(), (double)element.Value, GetRandomColor()));
-
-
+                element => new BarChartItem(element.Key.ToString(), (double)element.Value, GetRandomColor()));
+            
             return barChart;
         }
 
-        private static ConsoleColor GetRandomColor() => new[]
+        private static ConsoleColor GetRandomColor()
+        {
+            return new[]
                 {
                     Black, DarkBlue, DarkGreen, DarkCyan,
                     DarkRed, DarkMagenta, DarkYellow, Gray,
@@ -59,5 +78,6 @@ namespace Console
                 }
                 .OrderBy(_ => Guid.NewGuid())
                 .FirstOrDefault()!;
+        }
     }
 }
