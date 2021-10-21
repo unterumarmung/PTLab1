@@ -26,6 +26,22 @@
 * NUnit - базовая библиотека юнит-тестов
 * FluentAssertions - библиотека для "красивых" ассертов
 
+CI/CD - GitHub Actions:
+* GH Action `actions/checkout@v2` - выполняет `git checkout` на текущую ревизию, чтобы CI/CD имел доступ к состоянию репозитория.
+* GH Action `actions/setup-dotnet@v1` - устанавливает dotnet нужной версии 
+
+## UML Диаграмма классов
+
+![Диаграмма классов](ClassDiagram.png)
+
 ## Пример использования
 
 [![asciicast](https://asciinema.org/a/nljCnhA84Ofn8vsJ7EPkPsjn5.svg)](https://asciinema.org/a/nljCnhA84Ofn8vsJ7EPkPsjn5)
+
+## Применания
+
+* TravisCI не поддерживает CI/CD для .NET 5 приложений, поэтому было принято решение использовать в качестве инструмента для CI/CD - Github Actions.
+
+## Выводы
+
+В рамках лабораторной работы я изучил основы работы с такими инструментами как Git, Github Actions и успешно их применил для выполнения индивитуального задания.
