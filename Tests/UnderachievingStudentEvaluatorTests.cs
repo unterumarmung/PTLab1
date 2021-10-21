@@ -27,14 +27,14 @@ namespace Tests
                 }
             };
             var evaluator = new UnderachievingStudentsEvaluator { StudentGrades = grades };
-            
+
             // Act
             var actual = evaluator.Evaluate();
-            
+
             // Assert
             actual.Should().BeEmpty();
         }
-        
+
         [Test]
         public void OneUnderachieving()
         {
@@ -43,7 +43,7 @@ namespace Tests
             {
                 [FromString("Иванов Константин Дмитриевич")] = new()
                 {
-                    new("математика", 60),
+                    new("математика", 62),
                     new("химия", 100)
                 },
                 [FromString("Петров Петр Семенович")] = new()
@@ -56,11 +56,11 @@ namespace Tests
             var expected = new[] { FromString("Иванов Константин Дмитриевич") };
             // Act
             var actual = evaluator.Evaluate();
-            
+
             // Assert
             actual.Should().BeEquivalentTo(expected);
         }
-        
+
         [Test]
         public void AllUnderachieving()
         {
@@ -82,7 +82,7 @@ namespace Tests
             var expected = new[] { FromString("Иванов Константин Дмитриевич"), FromString("Петров Петр Семенович") };
             // Act
             var actual = evaluator.Evaluate();
-            
+
             // Assert
             actual.Should().BeEquivalentTo(expected);
         }
